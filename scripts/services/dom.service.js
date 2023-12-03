@@ -1,7 +1,8 @@
 import { countries, reset, search } from "./countries.service.js";
 
-const searchInput = document.getElementById("search");
 const cards = document.getElementById("cards");
+
+const searchInput = document.getElementById("search");
 
 searchInput.addEventListener('keyup', (event) => {
     reset();
