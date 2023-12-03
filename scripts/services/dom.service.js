@@ -5,10 +5,10 @@ const cards = document.getElementById("cards");
 
 const createCard = (country) => {
     const card = document.createElement("div");
-    card.className = 'card';
+    card.className = 'card m-2 col-md-3 col-sm-12 shadow';
 
     const cardImg = document.createElement("img");
-    cardImg.className = 'card-img-top img border rounded shadow';
+    cardImg.className = 'card-img-top img border rounded shadow mt-3';
     cardImg.src = country.flags.png;
 
     const cardBody = document.createElement('div');
@@ -23,7 +23,7 @@ const createCard = (country) => {
     population.textContent = `population: ${country.population}`;
 
     const cardFooter = document.createElement('div');
-    cardFooter.className = 'card-footer';
+    cardFooter.className = 'card-footer d-flex justify-content-center';
 
     const heart = document.createElement('i');
     heart.className = 'fa fa-heart';
