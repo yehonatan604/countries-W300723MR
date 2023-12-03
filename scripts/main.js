@@ -1,4 +1,4 @@
-import { getCountries } from "./services/countries.service.js";
+import { getCountries } from "./services/countries.service";
 
 console.log(await getCountries());
 
