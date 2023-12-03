@@ -1,7 +1,19 @@
-import { getCountries } from "./countries.service.js";
+import { countries, reset, search } from "./countries.service.js";
 
 const searchInput = document.getElementById("search");
 const cards = document.getElementById("cards");
+
+searchInput.addEventListener('keyup', (event) => {
+    reset();
+    cards.innerHTML = '';
+
+    if (!event.target.value || event.target.value == '') {
+        return createCardsList();
+    }
+
+    search(event.target.value);
+    createCardsList();
+});
 
 const createCard = (country) => {
     const card = document.createElement("div");
@@ -43,7 +55,7 @@ const createCard = (country) => {
 }
 
 export const createCardsList = async () => {
-    for (const item of await getCountries()) {
+    for (const item of countries) {
         createCard(item);
     }
 }
